@@ -1,0 +1,12 @@
+/tiers
+/bin/
+*.test
+*.out
+coverage.html
+*.prof
+dist/
+.DS_Store
+*.bck
+*.swp
+*.swo
+.claude/

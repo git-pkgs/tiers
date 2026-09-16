@@ -1,0 +1,6 @@
+[package]
+name = "cbin"
+version = "0.1.0"
+
+[dependencies]
+clib = "0.1"
