@@ -9,14 +9,26 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"runtime/debug"
 	"sort"
 	"strings"
 
 	"github.com/git-pkgs/manifests"
 )
 
-// Version is set at build time via ldflags.
+// Version is set at build time via ldflags. When unset (go install,
+// go build without -ldflags), init falls back to the module version
+// embedded by the Go toolchain.
 var Version = "dev"
+
+func init() {
+	if Version != "dev" {
+		return
+	}
+	if bi, ok := debug.ReadBuildInfo(); ok && bi.Main.Version != "" && bi.Main.Version != "(devel)" {
+		Version = bi.Main.Version
+	}
+}
 
 // Package is one publishable unit discovered from a manifest.
 type Package struct {
