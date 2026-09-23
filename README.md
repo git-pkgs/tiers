@@ -6,8 +6,16 @@ Manifest parsing is delegated to [manifests](https://github.com/git-pkgs/manifes
 
 ## Install
 
+Install the CLI:
+
 ```bash
 go install github.com/git-pkgs/tiers/cmd/tiers@latest
+```
+
+Add the library to your Go module:
+
+```sh
+go get github.com/git-pkgs/tiers
 ```
 
 ## CLI
@@ -74,4 +82,4 @@ for i, tier := range layers {
 
 ## License
 
-MIT
+[MIT](LICENSE).
