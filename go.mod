@@ -3,7 +3,7 @@ module github.com/git-pkgs/tiers
 go 1.27.1
 
 require (
-	github.com/git-pkgs/managers v0.12.0
+	github.com/git-pkgs/managers v0.13.0
 	github.com/git-pkgs/manifests v0.12.4
 )
 
